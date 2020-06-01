@@ -27,7 +27,7 @@ npm i simple-redux-js
 
 ```javascript
 const App = () => (
-  <SimpleProvider initialState={{ token: defaultToken }}>
+  <SimpleProvider initialState={{ token: 'default_token' }}>
     <Child>
   </SimpleProvider>
 )
@@ -57,8 +57,8 @@ const token = useSimpleSelector('token')
 - **simpleAction** (propertyName, propertyValue))
 Updates the property by name with the specified value.
 ``` javascript
-  const dispatch = useDispatch()
-  const setToken = (token) => dispatch(simpleAction('token', token))
+  const simpleDispatch = useSimpleDispatch()
+  const setToken = (token) => simpleDispatch('token', token)
 ```
 
 ## Online Examples
@@ -89,12 +89,12 @@ ReactDom.render(<App/>, document.getElementById('root'))
 // Child.js
 import React from 'react'
 
-import { useSimpleSelector, useDispatch, simpleAction } from 'simple-redux-js'
+import { useSimpleSelector, useSimpleDispatch } from 'simple-redux-js'
 
 const Child = () => {
-  const dispatch = useDispatch()
+  const simpleDispatch = useSimpleDispatch()
   const token = useSimpleSelector('token')
-  const setToken = (token) => dispatch(simpleAction('token', token))
+  const setToken = (token) => simpleDispatch('token', token)
 
   return (
     <div>

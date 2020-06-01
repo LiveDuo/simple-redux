@@ -18,8 +18,15 @@ export { SimpleProvider }
 
 const useSimpleSelector = (property) => useSelector(state => state[property])
 
-export { useSimpleSelector, useDispatch }
+const useSimpleDispatch = () => {
+  const dispatch = useDispatch()
+  return (property, value) => dispatch({type: property, [property]: value})
+}
 
-const simpleAction = (property, value) => ({type: property, [property]: value})
+export { useSimpleSelector, useSimpleDispatch }
 
-export { simpleAction }
+// export { useDispatch }
+
+// const simpleAction = (property, value) => ({type: property, [property]: value})
+
+// export { simpleAction }

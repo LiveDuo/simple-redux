@@ -11,13 +11,7 @@ require("core-js/modules/es.object.get-own-property-descriptors");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "useDispatch", {
-  enumerable: true,
-  get: function get() {
-    return _reactRedux.useDispatch;
-  }
-});
-exports.simpleAction = exports.useSimpleSelector = exports.SimpleProvider = void 0;
+exports.useSimpleDispatch = exports.useSimpleSelector = exports.SimpleProvider = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -68,11 +62,17 @@ var useSimpleSelector = function useSimpleSelector(property) {
 
 exports.useSimpleSelector = useSimpleSelector;
 
-var simpleAction = function simpleAction(property, value) {
-  return {
-    type: property,
-    [property]: value
+var useSimpleDispatch = function useSimpleDispatch() {
+  var dispatch = (0, _reactRedux.useDispatch)();
+  return function (property, value) {
+    return dispatch({
+      type: property,
+      [property]: value
+    });
   };
-};
+}; // export { useDispatch }
+// const simpleAction = (property, value) => ({type: property, [property]: value})
+// export { simpleAction }
 
-exports.simpleAction = simpleAction;
+
+exports.useSimpleDispatch = useSimpleDispatch;
