@@ -1,11 +1,28 @@
 {
   "name": "simple-redux-js",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "A barebone version of redux",
-  "main": "index.js",
+  "main": "bin/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --exec babel-node --watch src src/index.js",
+    "build": "rimraf bin && babel src --out-dir bin --copy-files"
   },
   "author": "liveduo",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/node": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "nodemon": "^2.0.4",
+    "rimraf": "^3.0.2"
+  }
 }
