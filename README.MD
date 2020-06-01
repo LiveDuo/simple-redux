@@ -62,16 +62,18 @@ Creates a dispatch method to update the store.
   const simpleDispatch = useSimpleDispatch()
 ```
 
-- **useSimpleDispatch simpleDispatch** (propertyName<string>, propertyValue<string>)
+- **simpleDispatch** (propertyName<string>, propertyValue<string>)
 Updates the property by name with the specified value.
 ``` javascript
   const setToken = (token) => simpleDispatch('token', token)
 ```
 
+<!--
 ## Online Examples
 
 - [&lt;user-auth&gt;](https://brokenlink.com) - user auth state
 - [&lt;todo-app&gt;](https://brokenlink.com) - todo app example
+-->
 
 ## Full Example
 
