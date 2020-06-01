@@ -20,32 +20,33 @@
 ## Getting Started
 
 1. Install the npm package.
-```javascript
-npm i simple-redux-js
-```
+    ```javascript
+    npm i simple-redux-js
+    ```
+
 2. Load the provider in App.js.
 
-```javascript
-const App = () => (
-  <SimpleProvider initialState={{ token: 'default_token' }}>
-    <Child>
-  </SimpleProvider>
-)
-```
+    ```javascript
+    const App = () => (
+      <SimpleProvider initialState={{ token: 'default_token' }}>
+        <Child>
+      </SimpleProvider>
+    )
+    ```
 
 3. Access and update global state in any other component.
 
-```javascript
-const Child = () => {
-  const simpleDispatch = useSimpleDispatch()
-  return (
-    <div>
-      <span>{useSimpleSelector('token')}</span>
-      <button onClick={() => simpleDispatch('token', 'value')}>
-    </div>
-  )
-}
-```
+    ```javascript
+    const Child = () => {
+      const simpleDispatch = useSimpleDispatch()
+      return (
+        <div>
+          <span>{useSimpleSelector('token')}</span>
+          <button onClick={() => simpleDispatch('token', 'value')}>
+        </div>
+      )
+    }
+    ```
 
 ## Documentation
 
@@ -55,7 +56,7 @@ Selects the property by name from the store.
 const token = useSimpleSelector('token')
 ```
 
-- **useSimpleDispatch**
+- **useSimpleDispatch** ()
 Creates a dispatch method to update the store.
 ``` javascript
   const simpleDispatch = useSimpleDispatch()
