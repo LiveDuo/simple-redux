@@ -10,7 +10,13 @@ const getRootReducer = (initialState) => (state = initialState, action) => {
   return state
 }
 
-const createSimpleStore = (initialState) => createStore(getRootReducer(initialState))
+let store
+
+const createSimpleStore = (initialState) => {
+  const nstore = createStore(getRootReducer(initialState))
+  store = nstore
+  return nstore
+}
 
 const SimpleProvider = (props) => (<Provider store={createSimpleStore(props.initialState)}>{props.children}</Provider>)
 
@@ -25,8 +31,5 @@ const useSimpleDispatch = () => {
 
 export { useSimpleSelector, useSimpleDispatch }
 
-// export { useDispatch }
-
-// const simpleAction = (property, value) => ({type: property, [property]: value})
-
-// export { simpleAction }
+const getSimpleState = (property) => store.getState()[property]
+export { getSimpleState }

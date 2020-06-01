@@ -56,6 +56,12 @@ Selects the property by name from the store.
 const token = useSimpleSelector('token')
 ```
 
+- **getSimpleState** (propertyName<string>)
+Selects the property by name outside of a component.
+``` javascript
+const token = getSimpleState('token')
+```
+
 - **useSimpleDispatch** ()
 Creates a dispatch method to update the store.
 ``` javascript

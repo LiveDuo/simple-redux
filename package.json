@@ -1,6 +1,6 @@
 {
   "name": "simple-redux-js",
-  "version": "0.5.11",
+  "version": "0.6.3",
   "description": "A barebone version of redux",
   "main": "bin/index.js",
   "repository": {
