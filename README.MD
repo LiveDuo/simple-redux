@@ -37,11 +37,11 @@ const App = () => (
 
 ```javascript
 const Child = () => {
-  const dispatch = useDispatch()
+  const simpleDispatch = useSimpleDispatch()
   return (
     <div>
       <span>{useSimpleSelector('token')}</span>
-      <button onClick={() => dispatch(simpleAction('token', 'value'))}>
+      <button onClick={() => simpleDispatch('token', 'value')}>
     </div>
   )
 }
@@ -49,15 +49,21 @@ const Child = () => {
 
 ## Documentation
 
-- **useSimpleSelector** (propertyName)
+- **useSimpleSelector** (propertyName<string>)
 Selects the property by name from the store.
 ``` javascript
 const token = useSimpleSelector('token')
 ```
-- **simpleAction** (propertyName, propertyValue))
-Updates the property by name with the specified value.
+
+- **useSimpleDispatch**
+Creates a dispatch method to update the store.
 ``` javascript
   const simpleDispatch = useSimpleDispatch()
+```
+
+- **useSimpleDispatch simpleDispatch** (propertyName<string>, propertyValue<string>)
+Updates the property by name with the specified value.
+``` javascript
   const setToken = (token) => simpleDispatch('token', token)
 ```
 
