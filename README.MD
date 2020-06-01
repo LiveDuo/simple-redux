@@ -4,16 +4,18 @@
   <br/>
 </h1>
 
+<!--
 [![npm version](https://img.shields.io/npm/v/hybrids.svg?style=flat)](https://www.npmjs.com/package/hybrids)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/hybrids.svg?label=minzip)](https://bundlephobia.com/result?p=hybrids)
 [![npm](https://img.shields.io/npm/dt/hybrids.svg)](https://www.npmjs.com/package/hybrids)
 [![GitHub](https://img.shields.io/github/license/hybridsjs/hybrids.svg)](LICENSE)
+-->
 
 **Simple Redux** is a state management library for the layman. It is just a global store to get and update values.
 
-* **Dead simple** — There is one hook for receiving values and updating them.
-* **Redux concepts** — This library is a highly opinionated version of Redux which means that core redux concepts still apply.
-* **Plug & Play** — You can copy and paste the code below and you are ready to go.
+* **Dead simple** — One hook for receiving values and updating them.
+* **Redux based** — Opinionated version of Redux. Core Redux concepts still apply.
+* **Plug & Play** — Copy and paste the code below and you are ready to go.
 
 ## Getting Started
 
@@ -21,7 +23,7 @@
 ```javascript
 npm i simple-redux-js
 ```
-1. Load the provider in App.js.
+2. Load the provider in App.js.
 
 ```javascript
 const App = () => (
@@ -31,7 +33,7 @@ const App = () => (
 )
 ```
 
-2. Access and update global state in any other component.
+3. Access and update global state in any other component.
 
 ```javascript
 const Child = () => {
