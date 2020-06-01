@@ -24,6 +24,50 @@ npm i simple-redux-js
 1. Load the provider in App.js.
 
 ```javascript
+const App = () => (
+  <SimpleProvider initialState={{ token: defaultToken }}>
+    <Child>
+  </SimpleProvider>
+)
+```
+
+2. Access and update global state in any other component.
+
+```javascript
+const Child = () => {
+  const dispatch = useDispatch()
+  return (
+    <div>
+      <span>{useSimpleSelector('token')}</span>
+      <button onClick={() => dispatch(simpleAction('token', 'value'))}>
+    </div>
+  )
+}
+```
+
+## Documentation
+
+- **useSimpleSelector** (propertyName)
+Selects the property by name from the store.
+``` javascript
+const token = useSimpleSelector('token')
+```
+- **simpleAction** (propertyName, propertyValue))
+Updates the property by name with the specified value.
+``` javascript
+  const dispatch = useDispatch()
+  const setToken = (token) => dispatch(simpleAction('token', token))
+```
+
+## Online Examples
+
+- [&lt;user-auth&gt;](https://brokenlink.com) - user auth state
+- [&lt;todo-app&gt;](https://brokenlink.com) - todo app example
+
+## Full Example
+
+```javascript
+// App.js
 import React from 'react'
 import ReactDom from 'react-dom'
 
@@ -39,11 +83,8 @@ const App = () => (
   </SimpleProvider>
 )
 ReactDom.render(<App/>, document.getElementById('root'))
-```
 
-2. Access and update global state in any other component.
-
-```javascript
+// Child.js
 import React from 'react'
 
 import { useSimpleSelector, useDispatch, simpleAction } from 'simple-redux-js'
@@ -62,25 +103,6 @@ const Child = () => {
 }
 export { Child }
 ```
-
-## Documentation
-
-- **useSimpleSelector** (propertyName)
-Selects the property by name from the store.
-``` javascript
-  const token = useSimpleSelector('token')
-```
-- **simpleAction** (propertyName, propertyValue))
-Updates the property by name with the specified value.
-``` javascript
-  const dispatch = useDispatch()
-  const setToken = (token) => dispatch(simpleAction('token', token))
-```
-
-## Examples
-
-- [&lt;user-auth&gt;](https://brokenlink.com) - user auth state
-- [&lt;todo-app&gt;](https://brokenlink.com) - todo app example
 
 ## License
 
