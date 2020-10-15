@@ -12,6 +12,8 @@ const getRootReducer = (initialState) => (state = initialState, action) => {
 
 let store
 
+export { store }
+
 const createSimpleStore = (initialState) => {
   const nstore = createStore(getRootReducer(initialState))
   store = nstore
@@ -33,3 +35,6 @@ export { useSimpleSelector, useSimpleDispatch }
 
 const getSimpleState = (property) => store.getState()[property]
 export { getSimpleState }
+
+const getSimpleStates = () => store.getState()
+export { getSimpleStates }

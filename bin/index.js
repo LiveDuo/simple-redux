@@ -11,7 +11,7 @@ require("core-js/modules/es.object.get-own-property-descriptors");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getSimpleState = exports.useSimpleDispatch = exports.useSimpleSelector = exports.SimpleProvider = void 0;
+exports.getSimpleStates = exports.getSimpleState = exports.useSimpleDispatch = exports.useSimpleSelector = exports.SimpleProvider = exports.store = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -43,10 +43,11 @@ var getRootReducer = function getRootReducer(initialState) {
 };
 
 var store;
+exports.store = store;
 
 var createSimpleStore = function createSimpleStore(initialState) {
   var nstore = (0, _redux.createStore)(getRootReducer(initialState));
-  store = nstore;
+  exports.store = store = nstore;
   return nstore;
 };
 
@@ -83,3 +84,9 @@ var getSimpleState = function getSimpleState(property) {
 };
 
 exports.getSimpleState = getSimpleState;
+
+var getSimpleStates = function getSimpleStates() {
+  return store.getState();
+};
+
+exports.getSimpleStates = getSimpleStates;

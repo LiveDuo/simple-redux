@@ -62,6 +62,20 @@ Selects the property by name outside of a component.
 const token = getSimpleState('token')
 ```
 
+- **getSimpleStates** ()
+Selects all states of the store outside of a component.
+``` javascript
+const allStates = getSimpleStates()
+```
+
+- **store**
+Access the store outside of a component.
+``` javascript
+store.subscribe(() => {
+  console.log('the store has been updated')
+})
+```
+
 - **useSimpleDispatch** ()
 Creates a dispatch method to update the store.
 ``` javascript
@@ -119,6 +133,12 @@ const Child = () => {
   )
 }
 export { Child }
+```
+
+## Publish
+```
+npm login
+npm publish
 ```
 
 ## License

@@ -4,9 +4,9 @@
   "description": "A barebone version of redux",
   "main": "bin/index.js",
   "repository": {
-		"type": "git",
-		"url": "https://github.com/LiveDuo/simple-redux"
-	},
+    "type": "git",
+    "url": "https://github.com/LiveDuo/simple-redux"
+  },
   "scripts": {
     "dev": "nodemon --exec babel-node --watch src src/index.js",
     "build": "rimraf bin && babel src --out-dir bin --copy-files"
