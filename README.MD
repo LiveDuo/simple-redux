@@ -138,7 +138,10 @@ export { Child }
 ## Publish
 ```
 npm login
+git commit (clean repo)
+npm version patch (or minor)
 npm publish
+git push
 ```
 
 ## License
